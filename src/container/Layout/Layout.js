@@ -7,13 +7,11 @@ class Layout extends React.Component {
     render() {
         return (
             <Routes>
-                <Route path='/'
-                       element={<Landing/>}/>
+                <Route path='/' element={<Landing/>}/>
             </Routes>
         );
     }
 }
-
 
 
 export default Layout;

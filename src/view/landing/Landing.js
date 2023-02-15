@@ -6,6 +6,8 @@ import * as Icon from 'react-feather'
 import {Button, Card, CardBody, Col, Row} from "reactstrap";
 import {Input} from 'semantic-ui-react'
 import Footer from "../../components/Footer/Footer";
+import {Link} from "react-router-dom";
+import {FILTER_PATH} from "../../constants/constant";
 
 class Landing extends React.Component {
     state = {
@@ -50,7 +52,9 @@ class Landing extends React.Component {
                                                        placeholder='Search...'/>
                                             </Col>
                                             <Col md={3}>
-                                                <Button className='btn-common btn-calender'> Find your calender</Button>
+                                                <Button  className='btn-common btn-calender'> <Link style={{color:"white"}} to={FILTER_PATH}>
+                                                    Find your calender
+                                                </Link> </Button>
                                             </Col>
                                         </Row>
 
