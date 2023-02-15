@@ -1,0 +1,43 @@
+
+.footer {
+  background-color: black;
+
+  span {
+    color: #717171;
+    font: normal normal bold 22px/32px;
+  }
+
+  p {
+    padding-top: 15px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .sub-input {
+    margin-top: 15px;
+    display: flex;
+    background: #1F1E22 0% 0% no-repeat padding-box !important;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+
+    input {
+      background: #1F1E22 0% 0% no-repeat padding-box !important;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      height: 50px;
+      color: white;
+    }
+    input::selection{
+      border: none;
+    }
+
+    button {
+      background: #1F1E22 0% 0% no-repeat padding-box !important;
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+    }
+
+  }
+}
