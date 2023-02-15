@@ -11,7 +11,19 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText, Button,
+    NavbarText,
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Col,
+    CardTitle,
+    CardText,
+    Form,
+    FormGroup,
+    Label,
+    Input,
 } from 'reactstrap';
 import './Header.scss'
 import * as Icon from "react-feather";
@@ -19,10 +31,13 @@ import * as Icon from "react-feather";
 
 function Header(args) {
     const [isOpen, setIsOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const [screenSize, setScreenSize] = useState(window.innerWidth);
 
     const toggle = () => setIsOpen(!isOpen);
-    console.log(isOpen)
+
+    const openLogin = () => setOpen(!open);
+
     return (
         <div className='header-bar'>
             <Navbar>
@@ -74,7 +89,7 @@ function Header(args) {
                         </Nav>
 
                         <div className="d-flex flex-row login-btn-wrapper">
-                            <Button className='btn-login' outline>
+                            <Button onClick={openLogin} className='btn-login' outline>
                                 Log in
                             </Button>
                             <Button className='btn-get-started'>Get Started</Button>
@@ -95,7 +110,7 @@ function Header(args) {
                             <li>Contacts</li>
 
                             <div className="d-flex flex-column align-items-center justify-content-center">
-                                <Button className='mobile-login-btn' outline>
+                                <Button onClick={openLogin} className='mobile-login-btn' outline>
                                     Log in
                                 </Button>
                                 <Button outline className='mobile-login-btn'>Get Started</Button>
@@ -107,6 +122,49 @@ function Header(args) {
 
             </Navbar>
 
+
+            {open ?
+                <Modal className='login-modal' centered isOpen={open} toggle={() => setOpen(!open)}>
+                    <ModalHeader toggle={() => setOpen(!open)}/>
+                    <ModalBody>
+
+
+                        <div className="login-form ">
+
+                            <h1 className='text-center lbl-login'>Login</h1>
+
+                            <FormGroup>
+                                <Label for="exampleEmail">
+                                    User Name
+                                </Label>
+                                <Input
+                                    autoComplete={false}
+                                    id="exampleEmail"
+                                    name="username"
+                                    placeholder="user name"
+                                    type="text"
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="examplePassword">
+                                    Password
+                                </Label>
+                                <Input
+                                    id="examplePassword"
+                                    name="password"
+                                    placeholder="password"
+                                    type="password"
+                                />
+                            </FormGroup>
+
+                            <FormGroup className='d-flex justify-content-center'>
+                                <Button className='btn-common login-btn'>
+                                    Login
+                                </Button>
+                            </FormGroup>
+                        </div>
+                    </ModalBody>
+                </Modal> : null}
         </div>
     );
 }

@@ -1,8 +1,35 @@
 @import "./src/assets/sass/colors";
 
+.login-modal {
+  .modal-header {
+    border-bottom: none;
+  }
+
+  .login-form {
+    padding: 0 2rem 3rem 3rem;
+
+    .lbl-login {
+      color: $primary-color;
+      font-family: "Roboto Medium";
+      letter-spacing: 2px;
+      font-size: 32px;
+    }
+
+    .login-btn {
+      margin-top: 10px;
+      width: 100%;
+      font-family: "Roboto Medium";
+
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+  }
+}
 
 .header-bar {
-padding: 10px 0;
+  padding: 10px 0;
+
+
   .logo-name {
     color: $primary-color;
     font-family: "Roboto Medium" !important;
@@ -84,6 +111,7 @@ padding: 10px 0;
           font-size: 16px !important;
           margin: 20px 0 0 0;
           transition: 0.8s ease-in-out;
+
           h1 {
             font-weight: 800;
           }
