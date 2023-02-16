@@ -6,8 +6,8 @@ import * as Icon from 'react-feather'
 import {Button, Card, CardBody, Col, Row} from "reactstrap";
 import {Input} from 'semantic-ui-react'
 import Footer from "../../components/Footer/Footer";
-import {Link, } from "react-router-dom";
-import {FILTER_PATH} from "../../constants/constant";
+import {Link,} from "react-router-dom";
+import {APPLY_ONLINE_APPLICATION_PATH, FILTER_PATH} from "../../constants/constant";
 
 class Landing extends React.Component {
     state = {
@@ -24,7 +24,7 @@ class Landing extends React.Component {
             <div className='landing'>
                 <Header/>
 
-                <div className=" hero-section" style={{backgroundImage: `url(${clean})`}}>
+                <div className=" hero-section" >
                     <div className="container hero-wrapper">
                         <Row>
                             <Col sm={12} md={12} lg={8} xl={9}>
@@ -149,7 +149,9 @@ class Landing extends React.Component {
                                     aperiam architecto, consectetur deleniti deserunt distinctio facilis fugit quibusdam
                                     sed voluptatibus!</p>
 
-                                <Button className='btn-common btn-apply-online'> Apply Online </Button>
+                                <Button className='btn-common btn-apply-online'> <Link
+                                    to={APPLY_ONLINE_APPLICATION_PATH} style={{color: 'white'}}>Apply Online</Link>
+                                </Button>
                             </Col>
                             <Col sm={12} md={12} lg={4}>
                                 <img src={clean} alt="apply-online-img" className="img-apply-online"/>
