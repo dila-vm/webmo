@@ -9,6 +9,10 @@ import StarPicker from "react-star-picker";
 import Sidebar from "react-sidebar";
 import * as Icon from 'react-feather'
 
+import {history} from '../../history'
+import {Link} from "react-router-dom";
+import {PLACE_SERVICE_PATH} from "../../constants/constant";
+
 class FilterDetails extends React.Component {
 
     state = {
@@ -22,7 +26,7 @@ class FilterDetails extends React.Component {
         let data = {
             first_name: 'Harshadeva', email: 'dila@gmail.com', password: '11111111', password_confirmation: '11111111'
         };
-
+        console.log(this.props)
     }
 
     onSetSidebarOpen(open) {
@@ -211,24 +215,26 @@ class FilterDetails extends React.Component {
                         <Row>
                             <Col md={12} lg={12}>
                                 <Card className='availableCard'>
-                                    <CardBody><h1 className='available-result-txt'>{availableCount} results available
-                                        on {searchDate}</h1></CardBody>
+                                    <CardBody>
+                                        <h1 className='available-result-txt'>{availableCount} results available
+                                            on <span>{searchDate}</span></h1>
+                                    </CardBody>
                                 </Card>
                             </Col>
 
 
                             <Col md={12} lg={12} className='my-5'>
-                              <Row>
-                                  <Col md={12} lg={6}>
-                                      <Button className='btn-common btn-modify'> Modify search</Button>
+                                <Row>
+                                    <Col md={12} lg={6}>
+                                        <Button className='btn-common btn-modify'> Modify search</Button>
 
-                                  </Col>
-                                  <Col md={12} lg={6} className='d-flex justify-content-lg-end'>
+                                    </Col>
+                                    <Col md={12} lg={6} className='d-flex justify-content-lg-end'>
                                           <span className='drp-dwn-filter'><span>Sort by{' '}</span>
                                     <Dropdown placeholder='sort by' search selection options={friendOptions}/>
                                 </span>
-                                  </Col>
-                              </Row>
+                                    </Col>
+                                </Row>
                             </Col>
                             <Col md={12} lg={12} className='filtered-data-view'>
                                 {filterDate.map((item, index) => <Card key={index} className="data-card-wrapper">
@@ -249,7 +255,14 @@ class FilterDetails extends React.Component {
                                             <p>{item.companyDesc}</p>
 
                                             <div className="d-flex justify-content-end">
-                                                <Button className='btn-common btn-selectCleaner'> Select cleaner </Button>
+                                                <Button className='btn-common btn-selectCleaner'> <Link
+                                                    style={{color:'white'}}
+                                                    to={{
+                                                        pathname: PLACE_SERVICE_PATH,
+                                                        state: {item }// your data array of objects
+                                                    }}>
+                                                    Select cleaner
+                                                </Link></Button>
                                             </div>
 
                                         </CardBody>
