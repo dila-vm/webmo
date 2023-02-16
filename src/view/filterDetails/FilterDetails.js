@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import axios from 'axios';
 import {BASE_URL} from "../../service/ApiConfig";
-import {Button, Card, CardBody, Col, FormGroup, Input, Label, Row} from "reactstrap";
+import {Button, Card, CardBody, Col, FormGroup, Input, Label, Modal, ModalBody, ModalHeader, Row} from "reactstrap";
 import './filterDetails.scss'
 import {Checkbox, Dropdown} from "semantic-ui-react";
 import StarPicker from "react-star-picker";
@@ -11,7 +11,8 @@ import * as Icon from 'react-feather'
 
 import {history} from '../../history'
 import {Link} from "react-router-dom";
-import {PLACE_SERVICE_PATH} from "../../constants/constant";
+import {FILTER_PATH, PLACE_SERVICE_PATH} from "../../constants/constant";
+import FindCalender from "../../components/Modals/findCalender";
 
 class FilterDetails extends React.Component {
 
@@ -19,6 +20,7 @@ class FilterDetails extends React.Component {
         availableCount: 50,
         searchDate: '29/11/2023',
         sidebarOpen: false,
+        ModifyCard: false,
         screenSize: window.innerWidth
     }
 
@@ -33,8 +35,12 @@ class FilterDetails extends React.Component {
         this.setState({sidebarOpen: open});
     }
 
+    modifySearch(open) {
+        this.setState({ModifyCard: open});
+    }
+
     render() {
-        let {availableCount, searchDate, screenSize} = this.state
+        let {availableCount, searchDate, screenSize} = this.state;
         let preferredTime = [
             {name: 'Flexible-anyTime', count: 25},
             {name: 'Morning before 12pm', count: 22},
@@ -54,7 +60,7 @@ class FilterDetails extends React.Component {
             {name: 'Daily', count: 30},
             {name: 'One-off', count: 20}
         ];
-        const friendOptions = [
+        const sortBY = [
             {
                 key: '1',
                 text: 'Price A-Z',
@@ -74,7 +80,6 @@ class FilterDetails extends React.Component {
                 value: 'R A-Z',
             },
         ];
-
         const filterDate = [
             {
                 itemId: 1,
@@ -105,7 +110,7 @@ class FilterDetails extends React.Component {
                 starCount: 6,
                 companyDesc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aut consequatur deleniti dolor, doloremque dolorum ea eum hic impedit incidunt, labore maxime mollitia nobis officia rem soluta, temporibus unde.'
             },
-        ]
+        ];
 
         return <div className='filterView'>
             <Header/>
@@ -226,12 +231,13 @@ class FilterDetails extends React.Component {
                             <Col md={12} lg={12} className='my-5'>
                                 <Row>
                                     <Col md={12} lg={6}>
-                                        <Button className='btn-common btn-modify'> Modify search</Button>
+                                        <Button onClick={() => this.modifySearch(true)}
+                                                className='btn-common btn-modify'> Modify search</Button>
 
                                     </Col>
                                     <Col md={12} lg={6} className='d-flex justify-content-lg-end'>
                                           <span className='drp-dwn-filter'><span>Sort by{' '}</span>
-                                    <Dropdown placeholder='sort by' search selection options={friendOptions}/>
+                                    <Dropdown placeholder='sort by' search selection options={sortBY}/>
                                 </span>
                                     </Col>
                                 </Row>
@@ -256,10 +262,10 @@ class FilterDetails extends React.Component {
 
                                             <div className="d-flex justify-content-end">
                                                 <Button className='btn-common btn-selectCleaner'> <Link
-                                                    style={{color:'white'}}
+                                                    style={{color: 'white'}}
                                                     to={{
                                                         pathname: PLACE_SERVICE_PATH,
-                                                        state: {item }// your data array of objects
+                                                        state: {item}// your data array of objects
                                                     }}>
                                                     Select cleaner
                                                 </Link></Button>
@@ -275,6 +281,18 @@ class FilterDetails extends React.Component {
                     </Col>
                 </Row>
             </div>
+
+            <Modal size='lg' centered isOpen={this.state.ModifyCard} toggle={() => this.modifySearch(false)}>
+                <ModalHeader style={{border:"none"}} toggle={() => this.modifySearch(false)}/>
+                <ModalBody style={{paddingBottom:'3rem'}}>
+
+                    <Row className='filter-wrapper d-flex justify-content-lg-between'>
+                        <FindCalender/>
+                    </Row>
+
+                </ModalBody>
+            </Modal>
+
         </div>
     }
 }

@@ -1,0 +1,44 @@
+
+.filter-wrapper {
+  input {
+    height: 46px;
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  .btn-calender {
+    height: 46px;
+    font-size: 16px;
+    padding: 0 20px;
+
+
+  }
+}
+
+@media (max-width: 426px) {
+  .filter-wrapper {
+    input {
+      margin-bottom: 10px;
+    }
+
+    .btn-calender {
+      width: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 376px) {
+  .filter-card {
+    .filter-wrapper {
+      input {
+        margin-bottom: 10px;
+      }
+
+      .btn-calender {
+        width: 100%;
+      }
+    }
+  }
+}
