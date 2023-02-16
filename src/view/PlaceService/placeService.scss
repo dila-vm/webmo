@@ -1,0 +1,106 @@
+@import "./src/assets/sass/colors";
+
+.ui.steps .completedStep:after {
+  background-color: $primary-color !important;
+  color: white;
+
+}
+
+.ui.steps .completedStep:before {
+  background-color: $primary-color !important;
+  color: white !important;
+
+}
+
+.placeService {
+  height: 100vh;
+  background-color: whitesmoke;
+
+  .step-wrapper {
+    padding: 5rem 0 4rem 0;
+
+    .completedStep {
+      background-color: $primary-color !important;
+      color: white !important;
+
+      .ui.steps .step:after {
+        background-color: $primary-color !important;
+      }
+
+    }
+  }
+
+  .form-wrapper {
+    h1 {
+      color: $secondary-txt-color;
+      font-family: "Roboto Medium";
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
+
+    .often{
+      margin-bottom: 4rem;
+      .btn-wrapper {
+        margin-top: 20px;
+        padding: 0 20px;
+      }
+
+      .btn-grp-section {
+        width: 100% !important;
+
+        margin-right: 10px !important;
+        border-radius: 10px !important;
+      }
+
+    }
+
+    input {
+      margin: 25px 0;
+      height: 46px;
+      width: 100%;
+    }
+
+    button {
+      width: 30%;
+      padding: 10px 20px;
+      font-family: "Roboto Medium";
+      font-size: 16px;
+    }
+  }
+
+}
+
+
+@media (max-width: 426px) {
+  .placeService {
+    height: 100%;
+    padding-bottom: 5rem;
+    background-color: whitesmoke;
+
+    .step-wrapper {
+      padding: 5rem 0 4rem 0;
+
+      .completedStep {
+        background-color: $primary-color !important;
+        color: white !important;
+
+        .ui.steps .step:after {
+          background-color: $primary-color !important;
+        }
+
+      }
+    }
+
+    .form-wrapper {
+
+
+      button {
+        width: 100%;
+        padding: 10px 20px;
+        font-family: "Roboto Medium";
+        font-size: 16px;
+      }
+    }
+
+  }
+}
