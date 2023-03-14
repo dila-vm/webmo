@@ -9,8 +9,8 @@ export default [
   },
   {
     id: 'secondPage',
-    title: 'Second Page',
+    title: 'Users',
     icon: <Mail size={20} />,
-    navLink: '/second-page'
+    navLink: '/manage-users'
   }
 ]

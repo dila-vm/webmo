@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("src/assets/fonts/roboto/Roboto-Bold.ttf"); /* IE9*/
+  src: url("src/assets/fonts/roboto/Roboto-Bold.ttf") format("opentype"); /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/roboto/Roboto-Medium.ttf"); /* IE9*/
+  src: url("src/assets/fonts/roboto/Roboto-Medium.ttf") format("opentype"); /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/roboto/Roboto-Regular.ttf"); /* IE9*/
+  src: url("src/assets/fonts/roboto/Roboto-Regular.ttf") format("opentype"); /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("src/assets/fonts/roboto/Roboto-Light.ttf"); /* IE9*/
+  src: url("../fonts/roboto/Roboto-Light.ttf") format("opentype"); /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "Roboto Thin";
+  src: url("src/assets/fonts/roboto/Roboto-Thin.ttf"); /* IE9*/
+  src: url("src/assets/fonts/roboto/Roboto-Thin.ttf") format("opentype"); /* IE6-IE8 */
+}
+
+$common-medium: "Roboto Medium" !important;
+$common-bold: "Roboto Bold" !important;
+$common: "Roboto Regular" !important;
+$common-Light: "Roboto Light" !important;
+$common-Thin: "Roboto Thin" !important;

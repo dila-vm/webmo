@@ -8,13 +8,9 @@
 # testing
 /coverage
 
-/idea
-.idea
-
-/node_modules
-
 # production
 /build
+.build
 
 # misc
 .DS_Store
@@ -26,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.docz
+.eslintcache
+.vscode
+
+/react-shell-scripts
