@@ -1,5 +1,6 @@
 import {Badge} from "reactstrap";
 import React from "react";
+import {getUserStatus} from "../utility/CommonFun";
 
 export const userDetailsColumns = [
     {
@@ -20,17 +21,23 @@ export const userDetailsColumns = [
     {
         name: 'Email',
         selector: 'email',
-        key: 'userRole'
+        key: 'email'
     },
     {
-        name: 'Status',
+        name: 'STATUS',
         selector: 'status',
-        cell: row=>(
-            <Badge color="success" pill>Active</Badge>
+        minWidth: '10%',
+        cell: row => (
+            <Badge
+                color={getUserStatus(row.status).color} pill>
+                {
+                    getUserStatus(row.status).text
+                }
+            </Badge>
         )
     }, {
         name: 'Action',
         selector: 'action',
-        minWidth:'20%'
+        minWidth: '20%'
     }
 ]

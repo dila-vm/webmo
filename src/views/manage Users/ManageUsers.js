@@ -44,7 +44,7 @@ class ManageUsers extends React.Component {
                 lastName: 'Vm',
                 userRole: 'Admin',
                 email: 'dila@gmail.com',
-                status: 'ACTIVE',
+                status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
                             onClick={() => this.setState({isOpen: true})}> Update </Button>
@@ -73,12 +73,13 @@ class ManageUsers extends React.Component {
                         </Row>
                     </CardHeader>
                     <CardBody>
-                        <Row>
-                            <Col className='filterName' sm={{span: 24}} md={{span: 6}}>
+                        <Row className='w-100'>
+                            <Col className='filterName w-100'  xs={{span: 24}}  sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtUserName">
                                     User Name
                                 </Label>
                                 <Input
+                                    className='w-100'
                                     id="txtUserName"
                                     name="userName"
                                     onChange={(e) => this.handleInput(e)}
@@ -87,7 +88,7 @@ class ManageUsers extends React.Component {
                                 />
                             </Col>
 
-                            <Col className='filterName' sm={{span: 24}} md={{span: 6}}>
+                            <Col className='filterName'  xs={{span: 24}}  sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtUserName">
                                     First Name
                                 </Label>
@@ -100,7 +101,7 @@ class ManageUsers extends React.Component {
                                 />
                             </Col>
 
-                            <Col className='filterName' sm={{span: 24}} md={{span: 6}}>
+                            <Col className='filterName w-100' sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtRoleName">
                                     User Role
                                 </Label>
@@ -113,7 +114,7 @@ class ManageUsers extends React.Component {
 
                             </Col>
 
-                            <Col className='filterName' sm={{span: 24}} md={{span: 6}}>
+                            <Col className='filterName w-100' sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtRoleName">
                                     User Status
                                 </Label>
