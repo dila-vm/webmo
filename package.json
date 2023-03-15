@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "latest",
     "@casl/ability": "5.2.2",
     "@casl/react": "2.1.1",
     "@fullcalendar/core": "5.7.2",
@@ -50,7 +51,7 @@
     "react-contexify": "5.0.0",
     "react-copy-to-clipboard": "5.0.2",
     "react-country-flag": "2.0.1",
-    "react-data-table-component": "6.11.2",
+    "react-data-table-component": "^6.11.2",
     "react-dom": "17.0.1",
     "react-draft-wysiwyg": "1.14.5",
     "react-feather": "^2.0.10",
@@ -88,8 +89,7 @@
     "wnumb": "1.2.0",
     "xlsx": "0.16.2",
     "yarn": "1.21.1",
-    "yup": "0.32.8",
-    "@ant-design/icons": "latest"
+    "yup": "0.32.8"
   },
   "scripts": {
     "start": "react-app-rewired start",
