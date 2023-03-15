@@ -14,7 +14,10 @@ const Routes = [
     },
     {
         path: '/manage-users',
-        component: lazy(() => import('../../views/Manage Users/ManageUsers'))
+        component: lazy(() => import('../../views/manage Users/ManageUsers')),
+    },  {
+        path: '/add-users',
+        component: lazy(() => import('../../views/manage Users/addUsers/AddUsers')),
     },
     {
         path: '/login',

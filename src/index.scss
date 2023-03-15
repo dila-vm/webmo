@@ -1,2 +1,13 @@
 @import '../node_modules/prismjs/themes/prism-tomorrow';
-@import './assets/scss/app.scss';
+
+
+
+.btn-common{
+  letter-spacing: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-common:hover{
+  letter-spacing: 2px;
+  transition: 0.2s ease-in-out;
+}

@@ -34,7 +34,7 @@ import './assets/scss/style.scss'
 
 // ** Service Worker
 import * as serviceWorker from './serviceWorker'
-
+import './index.scss'
 // ** Lazy load app
 const LazyApp = lazy(() => import('./App'))
 

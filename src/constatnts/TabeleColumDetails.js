@@ -1,3 +1,6 @@
+import {Badge} from "reactstrap";
+import React from "react";
+
 export const userDetailsColumns = [
     {
         name: 'First Name',
@@ -18,5 +21,16 @@ export const userDetailsColumns = [
         name: 'Email',
         selector: 'email',
         key: 'userRole'
+    },
+    {
+        name: 'Status',
+        selector: 'status',
+        cell: row=>(
+            <Badge color="success" pill>Active</Badge>
+        )
+    }, {
+        name: 'Action',
+        selector: 'action',
+        minWidth:'20%'
     }
 ]
