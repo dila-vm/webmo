@@ -8,6 +8,7 @@ import DataTable from "react-data-table-component"
 import {ChevronDown, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
 import UserUpdate from "../../component/sidebar/userUpdate/UserUpdate";
+import {customToastMsg} from "../../utility/Utils";
 
 class ManageUsers extends React.Component {
 
@@ -48,7 +49,7 @@ class ManageUsers extends React.Component {
                 action: <div>
                     <Button outline className='mr-1' color='warning'
                             onClick={() => this.setState({isOpen: true})}> Update </Button>
-                    <Button outline color='danger'> Delete </Button>
+                    <Button onClick={(e)=>customToastMsg('temp',0,'lorem tem msglorem tem msglorem tem msglorem tem msg!')} outline color='danger'> Delete </Button>
                 </div>
             }
         ];
