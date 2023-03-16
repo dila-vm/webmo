@@ -28,7 +28,7 @@
       }
     }
     .toast-title {
-      color: $headings-color;
+      color: #ffffff !important;
       font-weight: 600;
       margin-left: 0.75rem;
       margin-bottom: 0;
@@ -36,7 +36,7 @@
   }
 
   .toastify-body {
-    color: $body-color;
+    color: #f4f4f4;
     padding-left: 2.3rem;
     font-size: 0.85rem;
     font-family: $font-family-sans-serif;

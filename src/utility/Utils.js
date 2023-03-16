@@ -1,3 +1,8 @@
+
+import {Slide, toast} from "react-toastify"
+import {Fragment} from "react";
+import Avatar from "../@core/components/avatar";
+import {AlertTriangle, Check, X} from "react-feather";
 // ** Checks if an object is empty (returns boolean)
 export const isObjEmpty = obj => Object.keys(obj).length === 0
 
@@ -19,13 +24,6 @@ const isToday = date => {
   )
 }
 
-/**
- ** Format and return date in Humanize format
- ** Intl docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format
- ** Intl Constructor: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
- * @param {String} value date to format
- * @param {Object} formatting Intl object to format with
- */
 export const formatDate = (value, formatting = { month: 'short', day: 'numeric', year: 'numeric' }) => {
   if (!value) return value
   return new Intl.DateTimeFormat('en-US', formatting).format(new Date(value))
@@ -43,22 +41,9 @@ export const formatDateToMonthShort = (value, toTimeForCurrentDay = true) => {
   return new Intl.DateTimeFormat('en-US', formatting).format(new Date(value))
 }
 
-/**
- ** Return if user is logged in
- ** This is completely up to you and how you want to store the token in your frontend application
- *  ? e.g. If you are using cookies to store the application please update this function
- */
 export const isUserLoggedIn = () => localStorage.getItem('userData')
 export const getUserData = () => JSON.parse(localStorage.getItem('userData'))
 
-/**
- ** This function is used for demo purpose route navigation
- ** In real app you won't need this function because your app will navigate to same route for each users regardless of ability
- ** Please note role field is just for showing purpose it's not used by anything in frontend
- ** We are checking role just for ease
- * ? NOTE: If you have different pages to navigate based on user ability then this function can be useful. However, you need to update it.
- * @param {String} userRole Role of user
- */
 export const getHomeRouteForLoggedInUser = userRole => {
   if (userRole === 'admin') return '/'
   if (userRole === 'client') return '/access-control'
@@ -76,4 +61,59 @@ export const selectThemeColors = theme => ({
     neutral20: '#ededed', // for input border-color
     neutral30: '#ededed' // for input hover border-color
   }
-})
+});
+
+
+const ToastContent = ({title, body, assets}) => (
+    <Fragment>
+      <div className='toastify-header'>
+        <div className='title-wrapper'>
+          <Avatar size='sm' className={assets.color} icon={assets.icon}/>
+          <h6 className='toast-title fw-bolder custom-font-toast'>{title}</h6>
+        </div>
+      </div>
+      {body && (
+          <div className='toastify-body'>
+            <span>{body}</span>
+          </div>
+      )}
+    </Fragment>
+)
+
+export const customToastMsg = (title, type, body) => {
+  let msgType = "info"
+  let assets = {
+    color: "bg-info",
+    icon: <AlertTriangle size={15}/>
+  }
+
+  if (type === 2) {
+    msgType = "info"
+    assets = {
+      color: "bg-info",
+      icon: <AlertTriangle size={15}/>
+    }
+  } else if (type === 0) {
+    msgType = "error"
+    assets = {
+      color: "bg-danger",
+      icon: <X size={15}/>
+    }
+  } else if (type === 1) {
+    msgType = "success"
+    assets = {
+      color: "bg-success",
+      icon: <Check size={15}/>
+    }
+  }
+
+  toast[msgType](
+      <ToastContent title={title} body={body} assets={assets}/>,
+      {icon: false, transition: Slide, hideProgressBar: true, autoClose: 2000}
+  )
+}
+
+export const isEmpty = (str) => {
+  return (!str || str.length === 0)
+}
+
