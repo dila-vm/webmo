@@ -32,18 +32,17 @@ export default [
         id: 'users_role',
         title: 'Users Role',
         icon: <Award size={20}/>,
-        navLink: '/manage-users-roles',
         children: [
             {
                 id: 'users_roles_view',
                 title: 'View User Roles',
                 icon: <Award size={20}/>,
-                navLink: '/manage-users'
+                navLink: '/manage-users-roles'
             }, {
                 id: 'users_role_add',
                 title: 'Add Users Role',
                 icon: <PlusCircle size={20}/>,
-                navLink: '/add-users'
+                navLink: '/add-users-role'
             },
         ]
     },
