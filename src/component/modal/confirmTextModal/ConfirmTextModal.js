@@ -58,7 +58,10 @@ class ConfirmTextModal extends React.Component {
                     >
                         Update
                     </Button>{' '}
-                    <Button color="secondary" className='btn-update' onClick={() => this.props.closeModal()}>
+                    <Button color="secondary" className='btn-update' onClick={() => {
+                        this.setState({confirmMsg: ''});
+                        this.props.closeModal();
+                    }}>
                         Cancel
                     </Button>
                 </ModalFooter>
