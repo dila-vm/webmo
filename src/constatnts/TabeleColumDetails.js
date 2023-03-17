@@ -77,7 +77,8 @@ export const packageDetailsColumns = [
         name: 'Package Id',
         selector: 'id',
         key: 'id',
-        maxWidth: '100px'
+        maxWidth: '150px',
+        sortable: true,
     }, {
         name: 'Package Name',
         selector: 'packageName',

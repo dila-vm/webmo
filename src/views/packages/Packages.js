@@ -7,14 +7,15 @@ import {packageDetailsColumns, userRoleDetailsColumns} from "../../constatnts/Ta
 import DataTable from "react-data-table-component"
 import {Award, ChevronDown, PlusCircle, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
-import UserUpdate from "../../component/sidebar/userUpdate/UserUpdate";
 import {customToastMsg} from "../../utility/Utils";
+import PackageSlide from "../../component/sidebar/packages/PackageSlide";
 
 class ManagePackages extends React.Component {
 
     state = {
         userName: '',
-        isOpen: false
+        isOpen: false,
+        type: ''
     };
 
     constructor(props) {
@@ -65,7 +66,7 @@ class ManagePackages extends React.Component {
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true})}> Update </Button>
+                            onClick={() => this.setState({isOpen: true, type: 'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>
@@ -73,20 +74,22 @@ class ManagePackages extends React.Component {
             }
         ];
 
-        let {isOpen} = this.state;
+        let {isOpen, type} = this.state;
         return (
             <div>
                 <Card className='userManage'>
 
                     <CardHeader>
                         <Row className='w-100'>
-                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 21}} lg={{span: 21}}>
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 17}} lg={{span: 21}}>
                                 <h1>Manage Packages</h1>
 
                             </Col>
 
-                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 2}} lg={{span: 3}}>
-                                <Button className='w-100 btn-common' color="primary">
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 7}} lg={{span: 3}}>
+                                <Button className='w-100 btn-common' color="primary"
+                                        onClick={() => this.setState({isOpen: true, type: 'ADD'})}
+                                >
                                     <PlusCircle size={18} color='#fff'/> Add Packages
                                 </Button>
                             </Col>
@@ -162,11 +165,11 @@ class ManagePackages extends React.Component {
                     </CardBody>
                 </Card>
 
-                <UserUpdate
+                <PackageSlide
                     toggleSidebar={() => {
-
                         this.setState({isOpen: false})
                     }}
+                    type={type}
                     open={isOpen}/>
             </div>
         )
