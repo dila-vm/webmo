@@ -28,7 +28,10 @@ class UserRoleSlider extends React.Component {
     };
 
     addUserRole = () => {
-
+        customSweetAlert('Are you sure to add new User role? ', 2, () => {
+                console.log('add')
+            }
+        )
     };
 
     isUpdate = (val) => {
@@ -144,7 +147,8 @@ class UserRoleSlider extends React.Component {
                     await this.setState({openView: false})
                 }}
                 confirmMsg={(e) => this.isUpdate(e)}
-                msg={<small>If you want to update this user role name, Please write ' <i><b>Yes! Update this</b></i> ' in
+                msg={<small>If you want to update this user role name, Please write ' <i><b>Yes! Update this</b></i> '
+                    in
                     the text field</small>}
             />
         </Sidebar>
