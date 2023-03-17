@@ -3,7 +3,11 @@ import {Slide, toast} from "react-toastify"
 import {Fragment} from "react";
 import Avatar from "../@core/components/avatar";
 import {AlertTriangle, Check, X} from "react-feather";
-// ** Checks if an object is empty (returns boolean)
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content"
+export const MySwal = withReactContent(Swal)
+
+
 export const isObjEmpty = obj => Object.keys(obj).length === 0
 
 // ** Returns K format from a number
@@ -116,4 +120,89 @@ export const customToastMsg = (title, type, body) => {
 export const isEmpty = (str) => {
   return (!str || str.length === 0)
 }
+
+
+
+export const customSweetAlert = (text, type, buttonEvent, textInputProps, title) => {
+
+  let msgType = "warning"
+  if (type === 2) {
+    msgType = "info"
+  } else if (type === 0) {
+    msgType = "error"
+  } else if (type === 1) {
+    msgType = "success"
+  }
+
+  return MySwal.fire({
+    title,
+    text,
+    icon: msgType,
+    showCancelButton: true,
+    confirmButtonText: 'Yes',
+    customClass: {
+      confirmButton: 'btn btn-primary mr-2',
+      cancelButton: 'btn btn-outline-danger',
+      content: 'pt-1 pb-1',
+      input: 'mb-1 form-control alert-input-label',
+      inputLabel:'mt-2 font-weight-bold'
+    },
+    buttonsStyling: false,
+    input: textInputProps && textInputProps.enabled? 'textarea' : null,
+    inputLabel:textInputProps ? textInputProps.inputLabel : null,
+    inputPlaceholder: textInputProps ? textInputProps.placeholder : null,
+    inputValidator: (value) => {
+      if (!value) {
+        return textInputProps.errorMsg
+      }
+    }
+  }).then(function (result) {
+    if (result.value) {
+      buttonEvent(result.value)
+    }
+  })
+};
+
+export const customSweetAlertResolve = (text, type, buttonEvent, textInputProps, title,yesText) => {
+
+  let msgType = "warning"
+  if (type === 2) {
+    msgType = "info"
+  } else if (type === 0) {
+    msgType = "error"
+  } else if (type === 1) {
+    msgType = "success"
+  }
+
+  return MySwal.fire({
+    title,
+    text,
+    icon: msgType,
+    showCancelButton: true,
+    confirmButtonText: yesText,
+    customClass: {
+      confirmButton: 'btn btn-primary mr-2',
+      cancelButton: 'btn btn-outline-danger',
+      content: 'pt-1 pb-1',
+      input: 'mb-1 form-control alert-input-label',
+      inputLabel:'mt-2 font-weight-bold'
+    },
+    buttonsStyling: false,
+    input: textInputProps && textInputProps.enabled? 'textarea' : null,
+    inputLabel:textInputProps ? textInputProps.inputLabel : null,
+    inputPlaceholder: textInputProps ? textInputProps.placeholder : null,
+    inputValidator: (value) => {
+      if (!value) {
+        return textInputProps.errorMsg
+      }
+    }
+  }).then(function (result) {
+    if (result.value) {
+      console.log(result)
+      buttonEvent(result.value)
+    }
+  })
+}
+
+
 

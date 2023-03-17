@@ -202,3 +202,34 @@ export const serviceDetailsColumns = [
         minWidth: '20%'
     }
 ];
+
+
+export const itemDetailsColumns = [
+    {
+        name: 'Item Id',
+        selector: 'id',
+        key: 'id',
+        maxWidth: '100px'
+    }, {
+        name: 'Item Name',
+        selector: 'itemName',
+        key: 'itemName'
+    },
+    {
+        name: 'STATUS',
+        selector: 'status',
+        minWidth: '10%',
+        cell: row => (
+            <Badge
+                color={getUserStatus(row.status).color} pill>
+                {
+                    getUserStatus(row.status).text
+                }
+            </Badge>
+        )
+    }, {
+        name: 'Action',
+        selector: 'action',
+        minWidth: '20%'
+    }
+];

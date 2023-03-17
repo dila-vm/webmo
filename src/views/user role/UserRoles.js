@@ -9,12 +9,14 @@ import {Award, ChevronDown, PlusCircle, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
 import UserUpdate from "../../component/sidebar/userUpdate/UserUpdate";
 import {customToastMsg} from "../../utility/Utils";
+import UserRoleSlider from "../../component/sidebar/addUserRole/UserRoleSlider";
 
 class ManageUserRole extends React.Component {
 
     state = {
-        userName: '',
-        isOpen: false
+        userRole: '',
+        isOpen: false,
+        type: ''
     };
 
     constructor(props) {
@@ -41,12 +43,12 @@ class ManageUserRole extends React.Component {
     render() {
         const details = [
             {
-                id:'1',
+                id: '1',
                 userRole: 'Admin',
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true})}> Update </Button>
+                            onClick={() => this.setState({isOpen: true, type: 'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>
@@ -54,20 +56,21 @@ class ManageUserRole extends React.Component {
             }
         ];
 
-        let {isOpen} = this.state;
+        let {isOpen, type} = this.state;
         return (
             <div>
                 <Card className='userManage'>
 
                     <CardHeader>
                         <Row className='w-100'>
-                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 21}} lg={{span: 21}}>
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 20}} lg={{span: 20}}>
                                 <h1>Manage User Role</h1>
 
                             </Col>
 
-                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 2}} lg={{span: 3}}>
-                                <Button className='w-100 btn-common' color="primary">
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 4}} lg={{span: 4}}>
+                                <Button onClick={() => this.setState({isOpen: true, type: 'ADD'})}
+                                        className='w-100 btn-common' color="primary">
                                     <PlusCircle size={18} color='#fff'/> Add User Role
                                 </Button>
                             </Col>
@@ -126,11 +129,12 @@ class ManageUserRole extends React.Component {
                     </CardBody>
                 </Card>
 
-                <UserUpdate
+                <UserRoleSlider
                     toggleSidebar={() => {
 
                         this.setState({isOpen: false})
                     }}
+                    type={type}
                     open={isOpen}/>
             </div>
         )

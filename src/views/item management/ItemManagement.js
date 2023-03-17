@@ -3,7 +3,7 @@ import React from "react"
 import {Col, Divider, Input, Row, Select, Table} from "antd"
 import './itemmanagement.scss'
 import {userActive, userRoles} from "../../constatnts/DropdownValues"
-import {packageDetailsColumns, userRoleDetailsColumns} from "../../constatnts/TabeleColumDetails"
+import {itemDetailsColumns} from "../../constatnts/TabeleColumDetails"
 import DataTable from "react-data-table-component"
 import {Award, ChevronDown, PlusCircle, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
@@ -42,11 +42,7 @@ class ManageItem extends React.Component {
         const details = [
             {
                 id: '1',
-                packageName: 'package Name 01',
-                price: '100.00',
-                type: 'corporate',
-                count: '12',
-                discount: '2%',
+                itemName: 'Item Name 01',
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
@@ -57,11 +53,7 @@ class ManageItem extends React.Component {
                 </div>
             }, {
                 id: '2',
-                packageName: 'package Name 02',
-                price: '120.00',
-                type: 'corporate',
-                count: '56',
-                discount: '56%',
+                itemName: 'package Name 02',
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
@@ -135,7 +127,7 @@ class ManageItem extends React.Component {
                                     pagination={true}
                                     paginationServer
                                     subHeader={false}
-                                    columns={packageDetailsColumns}
+                                    columns={itemDetailsColumns}
                                     subHeaderWrap
                                     responsive={true}
                                     sortIcon={<ChevronDown/>}

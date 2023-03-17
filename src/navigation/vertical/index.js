@@ -32,19 +32,7 @@ export default [
         id: 'users_role',
         title: 'Users Role',
         icon: <Award size={20}/>,
-        children: [
-            {
-                id: 'users_roles_view',
-                title: 'View User Roles',
-                icon: <Award size={20}/>,
-                navLink: '/manage-users-roles'
-            }, {
-                id: 'users_role_add',
-                title: 'Add Users Role',
-                icon: <PlusCircle size={20}/>,
-                navLink: '/add-users-role'
-            },
-        ]
+        navLink: '/manage-users-roles'
     },
     {
         id: 'packages',
@@ -88,45 +76,45 @@ export default [
         icon: <Book size={20}/>,
         navLink: '/manage-subscriptions'
     }, {
-    id: 'service_management',
-    title: 'Service Management',
-    icon: <FileText size={20}/>,
-
-    children: [
-      {
-        id: 'view_services',
-        title: 'View Services',
+        id: 'service_management',
+        title: 'Service Management',
         icon: <FileText size={20}/>,
-        navLink: '/manage-Services'
-      }, {
-        id: 'add_services',
-        title: 'Add Services',
-        icon: <PlusCircle size={20}/>,
-        navLink: '/add-services'
-      },
-    ]
-  }, {
-    id: 'item_management',
-    title: 'Item Management',
-    icon: <Minimize size={20}/>,
 
-    children: [
-      {
-        id: 'view_item',
-        title: 'View Items',
+        children: [
+            {
+                id: 'view_services',
+                title: 'View Services',
+                icon: <FileText size={20}/>,
+                navLink: '/manage-Services'
+            }, {
+                id: 'add_services',
+                title: 'Add Services',
+                icon: <PlusCircle size={20}/>,
+                navLink: '/add-services'
+            },
+        ]
+    }, {
+        id: 'item_management',
+        title: 'Item Management',
         icon: <Minimize size={20}/>,
-        navLink: '/manage-items'
-      }, {
-        id: 'add_services',
-        title: 'Add Item',
-        icon: <PlusCircle size={20}/>,
-        navLink: '/add-item'
-      },
-    ]
-  },{
-    id: 'general_setting ',
-    title: 'General Settings',
-    icon: <Settings size={20}/>,
-    navLink: '/manage-settings'
-  }
+
+        children: [
+            {
+                id: 'view_item',
+                title: 'View Items',
+                icon: <Minimize size={20}/>,
+                navLink: '/manage-items'
+            }, {
+                id: 'add_services',
+                title: 'Add Item',
+                icon: <PlusCircle size={20}/>,
+                navLink: '/add-item'
+            },
+        ]
+    }, {
+        id: 'general_setting ',
+        title: 'General Settings',
+        icon: <Settings size={20}/>,
+        navLink: '/manage-settings'
+    }
 ]

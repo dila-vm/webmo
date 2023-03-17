@@ -9,7 +9,7 @@ import { store } from './redux/storeConfig/store'
 // ** Toast & ThemeColors Context
 import { ToastContainer } from 'react-toastify'
 import { ThemeContext } from './utility/context/ThemeColors'
-
+import 'sweetalert2/src/sweetalert2.scss'
 // ** Spinner (Splash Screen)
 import Spinner from './@core/components/spinner/Fallback-spinner'
 

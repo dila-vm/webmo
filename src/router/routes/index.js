@@ -21,13 +21,13 @@ const Routes = [
     }, {
         path: '/manage-users-roles',
         component: lazy(() => import('../../views/user role/UserRoles')),
-    },  {
+    }, {
         path: '/manage-packages',
         component: lazy(() => import('../../views/packages/Packages')),
-    },  {
+    }, {
         path: '/manage-permission',
         component: lazy(() => import('../../views/permissions/Permissions')),
-    },  {
+    }, {
         path: '/manage-subscriptions',
         component: lazy(() => import('../../views/subscriptions/Subscriptions')),
     }, {
@@ -36,7 +36,7 @@ const Routes = [
     }, {
         path: '/manage-items',
         component: lazy(() => import('../../views/item management/ItemManagement')),
-    },{
+    }, {
         path: '/manage-settings',
         component: lazy(() => import('../../views/general setting/GenaralSettings')),
     },
