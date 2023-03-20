@@ -7,3 +7,23 @@
   margin: 10px 0;
 
 }
+
+.service-card-selector {
+  border: 1px solid #b3b3b3;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 5px;
+
+  img {
+    border-radius: 10px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 0 !important;
+  }
+}
+.service-card-selector:hover {
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

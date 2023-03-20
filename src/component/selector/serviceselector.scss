@@ -1,0 +1,59 @@
+
+.interest-box {
+  height: 140px;
+  width: 140px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-interest-id {
+  background: linear-gradient(180deg, rgba(72, 0, 126, 0) 0%, rgba(43, 15, 63, 2) 25%, rgba(150, 2, 255, 5) 30.08%, rgba(91, 0, 158, 2) 61.56%, rgba(54, 10, 86, 2) 62.57%, rgba(54, 10, 86, 4) 76.56%, rgba(54, 10, 86, 3) 100%);
+}
+
+
+.interest-check-box {
+  border-radius: 15px;
+  width: 20px !important;
+  height: 20px !important;
+
+}
+
+.interest-text {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: rgba(102, 30, 108, 0.35) 0px 5px 15px;
+  font-size: 16px;
+  width: 140px;
+  text-align: center;
+  // background: linear-gradient(180deg, rgba(72, 0, 126, 0) 0%, rgb(99, 59, 128) 25%, rgb(122, 63, 164) 30.08%, rgb(132, 65, 182) 61.56%, rgba(54, 10, 86, 2) 62.57%, rgba(54, 10, 86, 4) 76.56%, rgba(54, 10, 86, 3) 100%);;
+
+}
+
+.interest-check {
+  top: -35%;
+  left: -42%;
+  border-radius: 15px !important;
+  outline-color: white;
+}
+
+
+.interest-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  transition: transform .5s;
+  overflow: hidden;
+  border-radius: 10px;
+  //background: linear-gradient(180deg, rgba(54, 10, 86, 0) 0%, rgba(54, 10, 86, 0.4) 25%, rgba(54, 10, 86, 0.5) 40.08%, rgba(54, 10, 86, 0.7) 51.56%, rgba(54, 10, 86, 0.5) 62.57%, rgba(54, 10, 86, 0.4) 76.56%, rgba(54, 10, 86, 0) 100%);
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+@media (max-width: 405px) {
+  .interest-box {
+    margin: 4px;
+  }
+}

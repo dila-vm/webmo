@@ -53,20 +53,8 @@ export default [
         id: 'service_management',
         title: 'Services Categories',
         icon: <FileText size={20}/>,
+        navLink: '/manage-Services'
 
-        children: [
-            {
-                id: 'view_services',
-                title: 'View Services',
-                icon: <FileText size={20}/>,
-                navLink: '/manage-Services'
-            }, {
-                id: 'add_services',
-                title: 'Add Services',
-                icon: <PlusCircle size={20}/>,
-                navLink: '/add-services'
-            },
-        ]
     }, {
         id: 'item_management',
         title: 'Item Management',

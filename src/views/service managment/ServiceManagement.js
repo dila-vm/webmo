@@ -33,7 +33,8 @@ class ServiceManagement extends React.Component {
 
     state = {
         userName: '',
-        isOpen: false
+        isOpen: false,
+        type:''
     };
 
     constructor(props) {
@@ -78,7 +79,7 @@ class ServiceManagement extends React.Component {
                 ],
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true})}> Update </Button>
+                            onClick={() => this.setState({isOpen: true,type:'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>
@@ -93,7 +94,7 @@ class ServiceManagement extends React.Component {
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true})}> Update </Button>
+                            onClick={() => this.setState({isOpen: true,type:'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>
@@ -102,7 +103,7 @@ class ServiceManagement extends React.Component {
         ];
 
 
-        let {isOpen} = this.state;
+        let {isOpen,type} = this.state;
         return (
             <div>
                 <Card className='userManage'>
@@ -115,7 +116,7 @@ class ServiceManagement extends React.Component {
                             </Col>
 
                             <Col xs={{span: 24}} sm={{span: 24}} md={{span: 2}} lg={{span: 3}}>
-                                <Button className='w-100 btn-common' color="primary">
+                                <Button  onClick={() => this.setState({isOpen: true,type:'ADD'})} className='w-100 btn-common' color="primary">
                                     <PlusCircle size={18} color='#fff'/> Add Service
                                 </Button>
                             </Col>
@@ -184,9 +185,9 @@ class ServiceManagement extends React.Component {
 
                 <ServiceSlide
                     toggleSidebar={() => {
-
                         this.setState({isOpen: false})
                     }}
+                    type={type}
                     open={isOpen}/>
             </div>
         )
