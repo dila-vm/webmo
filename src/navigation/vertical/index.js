@@ -38,38 +38,12 @@ export default [
         id: 'packages',
         title: 'Packages',
         icon: <Package size={20}/>,
-
-        children: [
-            {
-                id: 'view_packages',
-                title: 'View Packages',
-                icon: <Package size={20}/>,
-                navLink: '/manage-packages'
-            }, {
-                id: 'add_packages',
-                title: 'Add Packages',
-                icon: <PlusCircle size={20}/>,
-                navLink: '/add-packages'
-            },
-        ]
+        navLink: '/manage-packages',
     }, {
         id: 'Permission',
         title: 'Permission',
         icon: <Key size={20}/>,
-
-        children: [
-            {
-                id: 'view_permission',
-                title: 'View Permission',
-                icon: <Key size={20}/>,
-                navLink: '/manage-permission'
-            }, {
-                id: 'add_permission',
-                title: 'Add Permission',
-                icon: <PlusCircle size={20}/>,
-                navLink: '/add-permission'
-            },
-        ]
+        navLink: '/manage-permission'
     }, {
         id: 'Subscriptions',
         title: 'Subscriptions',
@@ -77,7 +51,7 @@ export default [
         navLink: '/manage-subscriptions'
     }, {
         id: 'service_management',
-        title: 'Service Management',
+        title: 'Services Categories',
         icon: <FileText size={20}/>,
 
         children: [

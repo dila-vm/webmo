@@ -51,7 +51,7 @@ class ManagePackages extends React.Component {
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true})}> Update </Button>
+                            onClick={async () =>  await this.setState({isOpen: true, type: 'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>
@@ -66,7 +66,7 @@ class ManagePackages extends React.Component {
                 status: 'INACTIVE',
                 action: <div>
                     <Button outline className='mr-1' color='warning'
-                            onClick={() => this.setState({isOpen: true, type: 'UPDATE'})}> Update </Button>
+                            onClick={async () => await this.setState({isOpen: true, type: 'UPDATE'})}> Update </Button>
                     <Button
                         onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
                         outline color='danger'> Delete </Button>

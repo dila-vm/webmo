@@ -9,6 +9,7 @@ import {Award, ChevronDown, PlusCircle, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
 import UserUpdate from "../../component/sidebar/userUpdate/UserUpdate";
 import {customToastMsg} from "../../utility/Utils";
+import ServiceSlide from "../../component/sidebar/serviceSlide/serviceSlide";
 
 const ExpandedComponent = ({data}) => <div>
 
@@ -181,7 +182,7 @@ class ServiceManagement extends React.Component {
                     </CardBody>
                 </Card>
 
-                <UserUpdate
+                <ServiceSlide
                     toggleSidebar={() => {
 
                         this.setState({isOpen: false})

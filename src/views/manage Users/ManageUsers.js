@@ -9,6 +9,7 @@ import {ChevronDown, UserPlus} from "react-feather"
 import {debounce} from '../../utility/CommonFun'
 import UserUpdate from "../../component/sidebar/userUpdate/UserUpdate";
 import {customToastMsg} from "../../utility/Utils";
+import {ADD_USER_ROUTE} from "../../constatnts/constantLinks";
 
 class ManageUsers extends React.Component {
 
@@ -37,6 +38,10 @@ class ManageUsers extends React.Component {
         this.debouncedFetch(newSearchInput);
     };
 
+    locateAddUser = () => {
+        //  console.log()
+        this.props.history.push(ADD_USER_ROUTE)
+    };
 
     render() {
         const details = [
@@ -49,7 +54,9 @@ class ManageUsers extends React.Component {
                 action: <div>
                     <Button outline className='mr-1' color='warning'
                             onClick={() => this.setState({isOpen: true})}> Update </Button>
-                    <Button onClick={(e)=>customToastMsg('temp',0,'lorem tem msglorem tem msglorem tem msglorem tem msg!')} outline color='danger'> Delete </Button>
+                    <Button
+                        onClick={(e) => customToastMsg('temp', 0, 'lorem tem msglorem tem msglorem tem msglorem tem msg!')}
+                        outline color='danger'> Delete </Button>
                 </div>
             }
         ];
@@ -67,7 +74,8 @@ class ManageUsers extends React.Component {
                             </Col>
 
                             <Col xs={{span: 24}} sm={{span: 24}} md={{span: 2}} lg={{span: 3}}>
-                                <Button className='w-100 btn-common' color="primary">
+                                <Button onClick={() => this.locateAddUser()} className='w-100 btn-common'
+                                        color="primary">
                                     <UserPlus size={18} color='#fff'/> Add User
                                 </Button>
                             </Col>
@@ -75,7 +83,7 @@ class ManageUsers extends React.Component {
                     </CardHeader>
                     <CardBody>
                         <Row className='w-100'>
-                            <Col className='filterName w-100'  xs={{span: 24}}  sm={{span: 24}} md={{span: 6}}>
+                            <Col className='filterName w-100' xs={{span: 24}} sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtUserName">
                                     User Name
                                 </Label>
@@ -89,7 +97,7 @@ class ManageUsers extends React.Component {
                                 />
                             </Col>
 
-                            <Col className='filterName'  xs={{span: 24}}  sm={{span: 24}} md={{span: 6}}>
+                            <Col className='filterName' xs={{span: 24}} sm={{span: 24}} md={{span: 6}}>
                                 <Label for="txtUserName">
                                     First Name
                                 </Label>

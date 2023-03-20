@@ -1,4 +1,5 @@
 import {lazy} from 'react'
+import {ADD_USER_ROUTE, MANAGE_USER_ROUTE} from "../../constatnts/constantLinks";
 
 // ** Document title
 const TemplateTitle = '%s - Vuexy React Admin Template'
@@ -13,10 +14,10 @@ const Routes = [
         component: lazy(() => import('../../views/dashboard/Home'))
     },
     {
-        path: '/manage-users',
+        path: MANAGE_USER_ROUTE,
         component: lazy(() => import('../../views/manage Users/ManageUsers')),
     }, {
-        path: '/add-users',
+        path: ADD_USER_ROUTE,
         component: lazy(() => import('../../views/manage Users/addUsers/AddUsers')),
     }, {
         path: '/manage-users-roles',
