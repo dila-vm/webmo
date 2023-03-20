@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../../../@core/components/sidebar";
-import {Col, Input, Row, Radio} from "antd";
-import {Button, CardBody, Label} from "reactstrap";
+import {Col, Row, Radio} from "antd";
+import {Button, CardBody, FormGroup, Input, Label} from "reactstrap";
 import InputPasswordToggle from "../../../@core/components/input-password-toggle";
 import '../sidebarStyles.scss'
 import {UserPlus} from "react-feather";
@@ -17,9 +17,9 @@ class PackageSlide extends React.Component {
         this.setState({[name]: value});
     };
 
-    onChange1 = ({ target: { value } }) => {
+    onChange1 = ({target: {value}}) => {
         console.log('radio1 checked', value);
-     //   setValue1(value);
+        //   setValue1(value);
     };
 
     render() {
@@ -123,10 +123,31 @@ class PackageSlide extends React.Component {
 
                         <Col className='update-user-wrapper' xs={{span: 24}} sm={{span: 24}} md={{span: 24}}>
                             <Label for="discount">
-                                Discount
+                                Package type
                             </Label>
                             <br/>
-                            <Radio.Group options={plainOptions} onChange={()=>this.onChange1()} value={value1}/>
+                            <div className="d-flex ">
+                                <FormGroup check className='mr-2'>
+                                    <Input
+                                        name="cooperate"
+                                        type="radio"
+                                    />
+                                    {' '}
+                                    <Label check>
+                                        Cooperate
+                                    </Label>
+                                </FormGroup>
+                                <FormGroup check>
+                                    <Input
+                                        name="individual"
+                                        type="radio"
+                                    />
+                                    {' '}
+                                    <Label check>
+                                        Individual
+                                    </Label>
+                                </FormGroup>
+                            </div>
 
                         </Col>
 
