@@ -1,4 +1,4 @@
-import {Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Label, Button} from 'reactstrap'
+import {Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Label, Button, FormGroup} from 'reactstrap'
 import React from "react"
 import {Col, Divider, Input, Row, Select, Table} from "antd"
 import './genaralSetting.scss'
@@ -75,6 +75,55 @@ class GeneralSettings extends React.Component {
                             <Col xs={{span: 24}} sm={{span: 24}} md={{span: 21}} lg={{span: 21}}>
                                 <h1>General Settings</h1>
                             </Col>
+                            <Col xs={{span: 24}} sm={{span: 24}} md={{span: 21}} lg={{span: 21}}>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At debitis facilis iste
+                                    laudantium molestiae non nulla praesentium tempore veritatis voluptates! Est, et
+                                    molestias nisi officiis provident veniam vitae. Debitis, quasi.adipisicing elit. At
+                                    debitis facilis iste
+                                    laudantium molestiae non nulla praesentium tempore veritatis voluptates! Est, et
+                                    molestias nisi officiis provident veniam vitae. Debitis, quasi.adipisicing elit. At
+                                    debitis facilis iste
+                                    laudantium molestiae non nulla praesentium tempore veritatis voluptates! Est, et
+                                    molestias nisi officiis provident veniam vitae. Debitis, quasi.</p>
+                            </Col>
+
+                            <FormGroup row className='mt-2 w-100'>
+                            <Label
+                                for="exampleEmail"
+                                sm={12}
+                                md={2}
+                            >
+                                Free Time
+                            </Label>
+                            <Col sm={12} md={10}>
+                                <Input
+                                    id="exampleEmail"
+                                    name="email"
+                                    placeholder="free time"
+                                    type="email"
+                                />
+                            </Col>
+                        </FormGroup>
+
+
+                            <FormGroup row className=' w-100'>
+                                <Label
+                                    for="exampleEmail"
+                                    sm={12}
+                                    md={2}
+                                >
+                                    Email
+                                </Label>
+                                <Col sm={12} md={10}>
+                                    <Input
+                                        id="exampleEmail"
+                                        name="email"
+                                        placeholder="with a placeholder"
+                                        type="email"
+                                    />
+                                </Col>
+                            </FormGroup>
+
                         </Row>
                     </CardHeader>
                     <CardBody>

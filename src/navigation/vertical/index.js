@@ -59,20 +59,8 @@ export default [
         id: 'item_management',
         title: 'Item Management',
         icon: <Minimize size={20}/>,
+        navLink: '/manage-items'
 
-        children: [
-            {
-                id: 'view_item',
-                title: 'View Items',
-                icon: <Minimize size={20}/>,
-                navLink: '/manage-items'
-            }, {
-                id: 'add_services',
-                title: 'Add Item',
-                icon: <PlusCircle size={20}/>,
-                navLink: '/add-item'
-            },
-        ]
     }, {
         id: 'general_setting ',
         title: 'General Settings',
