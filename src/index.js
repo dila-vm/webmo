@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 // ** Redux Imports
 import { Provider } from 'react-redux'
 import { store } from './redux/storeConfig/store'
-
+import 'react-list-editable/lib/react-list-editable.css';
 // ** Toast & ThemeColors Context
 import { ToastContainer } from 'react-toastify'
 import { ThemeContext } from './utility/context/ThemeColors'

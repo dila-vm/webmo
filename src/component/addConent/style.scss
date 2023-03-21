@@ -1,0 +1,11 @@
+.question-add-wrapper {
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 1rem;
+
+  .btn-close:hover {
+    background-color: #fdb3b0;
+    border-radius: 50%;
+  }
+}

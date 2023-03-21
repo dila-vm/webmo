@@ -1,6 +1,27 @@
 
 .update-user-wrapper {
   margin: 10px 0;
+
+  .assign-item-wrapper {
+    height: 310px;
+    width: 100%;
+    overflow-y: auto;
+
+  }
+
+
+  .add-conent-btn {
+    background-color: #d0abd6 !important;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50% !important;
+    padding: 0;
+
+    svg {
+      stroke: #713088 !important;
+    }
+  }
 }
 
 .btn-update-wrapper {
@@ -23,7 +44,9 @@
     margin-bottom: 0 !important;
   }
 }
+
 .service-card-selector:hover {
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+

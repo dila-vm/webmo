@@ -37,7 +37,7 @@ class ConfirmTextModal extends React.Component {
 
     render() {
         return <div className="confirmModal">
-            <Modal centered isOpen={this.props.isOpen} toggle={() => this.props.toggleView}>
+            <Modal centered isOpen={this.props.isOpen} toggle={() => this.props.closeModal}>
 
                 <ModalBody className='text-center mt-1 mx-2'>
                     <h3>{AreYouSureToUpdateUserRole}</h3>

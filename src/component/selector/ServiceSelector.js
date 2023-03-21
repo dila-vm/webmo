@@ -5,29 +5,27 @@ import './serviceselector.scss';
 class ServiceSelector extends React.Component {
 
     state = {
-        img:'',
-        name:'',
-        isChecked:''
+        img: '',
+        name: '',
+        isChecked: ''
     }
 
     componentDidMount() {
         this.setState({
-            img:this.props.img,
-            name:this.props.name,
-            isChecked:this.props.isChecked
+            img: this.props.img,
+            name: this.props.name,
+            isChecked: this.props.isChecked
         })
     }
 
-    toggleCheckbox = (e) => {
-        console.log(e.target.checked);
-    if (e.target.checked){
+    toggleCheckbox = () => {
+
         this.setState({
             isChecked: !this.state.isChecked
         })
         this.props.getSelectedCategories(this.props.item)
-    }
-    }
 
+    }
 
 
     // handleChange({target}){
@@ -41,18 +39,33 @@ class ServiceSelector extends React.Component {
     // }
 
     render() {
+
+        const styles = {
+            container: {
+                backgroundImage: `url(${this.state.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            },
+        };
         return (
-            <div  className="mr-1 interest-box d-flex justify-content-center align-items-center bg-success">
-                <img className="interest-img position-absolute" src={this.state.img} alt={""}/>
+            <div onClick={this.toggleCheckbox}
+                 className="mr-1 interest-box d-flex justify-content-center align-items-center  "
+                 style={styles.container}
+            >
 
-                <div className='interest-check position-relative form-check form-check-primary'>
+
+                <div
+                    className='interest-check position-relative form-check form-check-primary'>
                     {
-                        this.state.isChecked ?  <input onClick={(e)=>this.toggleCheckbox(e)}className=" interest-check-box"  type='checkbox' id='primary-checkbox' defaultChecked/> :
-                            <input onClick={(e)=>this.toggleCheckbox(e)}  className=" interest-check-box"  type='checkbox' id='primary-checkbox'/>
+                        this.state.isChecked ?
+                            <input onClick={this.toggleCheckbox} className=" interest-check-box" type='checkbox'
+                                   id='primary-checkbox' defaultChecked/> :
+                            <input onClick={this.toggleCheckbox} className=" interest-check-box" type='checkbox'
+                                   id='primary-checkbox'/>
                     }
-
+                    <span className="interest-text position-absolute">{this.state.name}</span>
                 </div>
-                <span className="interest-text position-absolute">{this.state.name}</span>
+
             </div>
         )
     }
